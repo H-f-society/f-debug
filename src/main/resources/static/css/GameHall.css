@@ -1,0 +1,157 @@
+/*
+* @Author: root
+* @Date:   2019-11-22 15:08:23
+* @Last Modified by:   H-f-society
+* @Last Modified time: 2020-02-24 10:54:10
+*/
+#HallMain {
+	width: 1100px;
+	margin: 20px auto;
+}
+#HallMain #MainLeft {
+	width: 750px;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+#HallMain #MainLeft .TopButton {
+	width: 360px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+	font-size: 15px;
+	color: #FFF;
+	background-color: #04C2C6;
+}
+#HallMain #MainLeft .TopButton:hover {
+	box-shadow: 2px 2px 3px #898383;
+}
+#HallMain #MainLeft #RandomWatch {
+	margin-left: 30px;
+	background-color: #991717;
+}
+#HallMain #MainLeft #CreateWindow {
+	width: 500px;
+	height: 200px;
+	position: absolute;
+	z-index: 5;
+	left: 125px;
+	top: 200px;
+	display: none;
+	background-color: #FFF;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px #898383;
+}
+#HallMain #MainLeft #CreateWindow input, select {
+	width: 150px;
+	height: 25px;
+	border: 0px;
+	margin-bottom: 5px;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px #898383;
+}
+#HallMain #MainLeft #CreateWindow .checkbox {
+	width: 20px;
+	height: 20px;
+	border-radius: 0px;
+	box-shadow: 0px 0px 0px #fff;
+}
+#HallMain #MainLeft #CreateWindow table {
+	margin: 10px auto;
+	line-height: 25px;
+	text-align: center;
+}
+#HallMain #MainLeft #CreateWindow button {
+	width: 100%;
+	height: 30px;
+	color: #FFF;
+	border: 0px;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px #898383;
+	background-color: #2B2929;
+}
+#HallMain #MainLeft #CreateWindow button:hover {
+	box-shadow: 2px 2px 3px #898383;
+}
+#HallMain #MainLeft #CreateWindow  option {
+	background-image: url('../../images/1.jpg');
+	background-size: 100% 100%;
+}
+
+#HallMain #MainLeft #RoomList {
+	width: 100%;
+	margin-top: 45px;
+}
+#HallMain #MainLeft .RoomList {
+	width: 100%;
+	height: 50px;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px #898383;
+	margin: 10px 0px;
+}
+#HallMain #MainLeft .RoomList:hover {
+	box-shadow: 2px 2px 3px #898383;
+}
+#HallMain #MainLeft .RoomList * {
+	height: 100%;
+	line-height: 50px;
+	margin-right: 20px;
+}
+
+#HallMain #MainLeft .RoomList span {
+	float: left;
+}
+#HallMain #MainLeft .RoomList img {
+	width: 50px;
+	float: left;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+#HallMain #MainLeft .RoomList button {
+	width: 65px;
+	height: 30px;
+	border: 0px;
+	background-color: #363636;
+	color: #FFF;
+	line-height: 25px;
+	margin: 10px 10px;
+	float: right;
+}
+#HallMain #MainLeft .RoomList button:hover {
+	box-shadow: 1px 1px 2px #898383;
+}
+#HallMain #MainLeft .RoomList .header {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 5px 10px;
+}
+#HallMain #MainLeft .RoomList .RoomName {
+	width: 150px;
+	overflow: hidden;			/*自动隐藏文字*/
+	text-overflow: ellipsis;	/*文字掩藏后添加省略号*/
+	white-space: nowrap;		/*强制不换行*/
+}
+#HallMain #MainLeft .RoomList .waiting {color: green;}
+#HallMain #MainLeft .RoomList .playing {color: red;}
+/*##########################*/
+#HallMain #MainRight {
+	width: 350px;
+	height: 100%;
+	float: left;
+}
+#HallMain .loading {
+	width: 100%;
+	height: 30px;
+	color: #FFF;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px #898383;
+	background-color: #494545;
+}
+#HallMain .loading:hover {
+	color: red;
+	background-color: #0F0F0F;
+}

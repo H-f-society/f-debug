@@ -1,0 +1,177 @@
+/*
+* @Author: HJJ
+* @Date:   2018-12-29 00:59:35
+* @Last Modified by:   H-f-society
+* @Last Modified time: 2020-02-23 09:58:21
+*/
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0px 0px;
+	margin: 0px 0px;
+}
+#main {
+	position: relative;
+	width: 1100px;
+	margin: 20px auto;
+}
+#main .main_left {
+	width: 750px;
+	height: 100%;
+	float: left;
+}
+#main .main_left .Write-blog {
+	width: 100%;
+	height: 300px;
+	box-shadow: 1px 1px 2px #848181;
+	border-radius: 10px;
+	display: none;
+	margin-bottom: 10px;
+}
+#main .main_left .Write-blog-img {
+	width: 100%;
+	height: 36px;
+}
+#main .main_left .Write-blog-img img,h3 {
+	margin: 0px;
+	float: left;
+	line-height: 36px;
+}
+.Write-blog form{
+	margin-left: 10px;
+}
+.Write-blog form input:nth-child(1){
+	width: 550px;
+	height: 25px;
+	margin-bottom: 10px;
+}
+.Write-blog form input:nth-child(3){ margin: 5px; }
+.Write-blog form input:nth-child(5),input:nth-child(6){
+	width: 70px;
+	height: 30px;
+	font-size: 15px;
+	color: #fff;
+	border: 1px;
+	border-radius: 5px;
+	background-color: #2B3DDC;
+	outline: none;
+	float: left;
+	margin-right: 8px;
+}
+.Write-blog form textarea {
+	width: 98%;
+	height: 180px;
+
+}
+/*添加图片按钮养样式*/
+.Write_blog_a{
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	overflow: hidden;
+	display: block;
+	text-decoration: none;
+	position: relative;
+	text-align: center;
+	line-height: 30px;
+	background: none repeat scroll 0 0 #2B3DDC;
+	border-radius: 5px;
+	margin-right: 8px;
+	float: left;
+	cursor: pointer; 
+}
+.Write_blog_a input{
+	position: absolute;
+	width: 120px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+	opacity: 0;
+	filter: alpha(opacity=0);/*兼容ie*/
+	float: left;
+	display: block;
+}
+.Write_blog_a:hover{ background-color: #0822C2; }
+.Write-blog form input:nth-child(5):hover,
+input:nth-child(6):hover{ background-color: #0822C2; }
+/* ############## */
+#main .main_right {
+	width: 350px;
+	height: 100%;
+	float: left;
+}
+.nav {
+	position: absolute;
+	width: 80px;
+	height: 300px;
+	right: -100px;
+	padding: 0px 0px;
+}
+.nav ul {
+	width: 100%;
+	height: 35px;
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+.nav ul a { text-decoration: none; }
+.nav ul li {
+	width: 100%;
+	list-style: none;
+	text-align: center;
+	line-height: 35px;
+	color: #000;
+	font-family: 微软雅黑;
+	margin-bottom: 5px;
+	box-shadow: 2px 2px 5px #434343;
+}
+.nav ul li:hover { background-color: red; color: #FFF; }
+#main .article_list {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 5px;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px #898383;
+}
+#main .article_list:hover { box-shadow: 2px 2px 3px #898383; }
+#main .article_list img{
+	height: 50px;
+	margin-right: 5px;
+	float: left;
+	border-radius: 50%;
+}
+#main .article_list a{
+	text-decoration: none;
+}
+#main .article_list h4 {
+	width: 530px;
+	margin: 0px;
+	margin-left: 10px;
+	float: left;
+	color: #000;
+	font-family: 黑体;
+	overflow: hidden;			/*自动隐藏文字*/
+	text-overflow: ellipsis;	/*文字掩藏后添加省略号*/
+	white-space: nowrap;		/*强制不换行*/
+	line-height: 50px;
+}
+#main .article_list h4:hover{ color: #FF0000; }
+#main .article_list span {
+	width: 60px;
+	float: right;
+	text-align: center;
+	line-height: 50px;
+}
+#main .loading {
+	width: 100%;
+	height: 30px;
+	color: #FFF;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px #898383;
+	background-color: #494545;
+}
+#main .loading:hover {
+	color: red;
+	background-color: #0F0F0F;
+}

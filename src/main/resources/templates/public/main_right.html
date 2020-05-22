@@ -1,0 +1,70 @@
+<div class="main_right">
+			<div class="recommend">
+				<div><b style="color:red;">||</b>
+					 <h4 style="color:#FFFFFF">热门推荐</h4>
+				</div>
+				<div class="recommend_list" th:each="article, articleStat : ${articleListTop10}">
+					<img th:src="@{/images/header/} + ${article.headImg}" th:title="${article.username}"/>
+					<a th:href="@{/articleInfo?articleId=} + ${article.id}">
+						<h5 th:title='${article.title}' th:text="${article.title}"></h5>
+					</a>
+				</div>
+			</div>
+			<div class="WEB_info">
+				<div><b style="color:red;">||</b>
+					 <h4 style="color:#FFFFFF">站点信息</h4>
+				</div>
+				<div><img src="images/download.png" alt="">
+					 <h5>联系方式</h5>
+					 <span>1272851460@qq.com</span><br>
+					 <span>2016-1521-0208</span>
+				</div>
+				<div id="tabs">
+					<script type="text/javascript">
+						$(function(){ $( "#tabs" ).tabs(); }); 
+					</script>
+					<ul><li><a href="#tabs-1">关于</a></li>
+						<li><a href="#tabs-2">成员</a></li>
+						<li><a href="#tabs-3">招聘</a></li>
+						<li><a href="#tabs-4">详细信息</a></li>
+					</ul>
+					<div id="tabs-1">
+						<b>公司简介</b><br><br>
+						<p>F-SOCIETY， 学术交流、分享平台，创立于2018-12-26年，致力于为中国大学生提供知识传播、在线学习、职业发展等全生命周期服务。</p>
+						<p>截止2020年6月，拥有超过1+技术会员，论坛发帖数1+，技术资源1+，Blog文章1+，新媒体矩阵粉丝数量1+，合作上千家科技公司及技术社区，全职员工超过1名。</p>
+						<p>在北京、上海、深圳、武汉、成都、长沙、海口等地区都没有分布。</p>
+					</div>
+					<div id="tabs-2">
+						<span><b>海口经济学院</b></span><br>
+						<span><b>网络学院-计算机科学与技术2班</b></span>
+						<span><b>201615210208-钟鸿杰</b></span><br>
+						<span><b>CEO、CTO: 钟鸿杰</b></span><br>
+						<br><br><br><br>
+						<span> 前端开发: 钟鸿杰</span><br>
+						<span> 前端美工: 钟鸿杰</span><br>
+						<span> 后端开发: 钟鸿杰</span><br>
+						<span> 后期运维: 钟鸿杰</span><br>
+						<span> 安全人员: 钟鸿杰</span><br>
+						<span> 产品经理: 钟鸿杰</span><br>
+						<span> 客服人员: 钟鸿杰</span><br>
+					</div>
+					<div id="tabs-3">
+						<b>PHP开发工程师</b><br><br>
+						<span>
+							1.精通高并发、高负载技术架构，熟悉Nginx等开源项目，熟悉PHP在Lnmp环境下的性能调优；<br>
+							2.熟悉 XHTML、CSS、JavaScript等语言规范，并能在多种主流浏览器中熟练运用；<br>
+							3.熟悉数据库设计及优化，对sql和nosql等有较好的理解和运用；
+						</span><br><br>
+						<b>前端开发工程师</b><br><br>
+						<span>
+							1.精通 Web 前端技术（HTML5/CSS3)，精通响应性设计，熟悉主流浏览器兼容开发，熟悉 W3C 标准；<br>
+							2.精通 JavaScript 语言核心，熟悉 Ajax、JSON 等功能；<br>
+							3.熟悉运用主流前端开发框架（Vue/React/AngularJS等），并深入理解设计原理；
+						</span>
+					</div>
+					<div id="tabs-4">
+						<p>我！秦始皇！打钱！封侯！</p>
+					</div>
+				</div>
+			</div>
+		</div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>f-society</title>
+	<link rel="icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/Navigation_bar.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/main_left.css">
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.min.js"></script>
+	<script src="script/index.js"></script>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<header th:replace="public/NavigationBar::div"> </header>
+	<!-- 主页总分类动画 -->
+	<div id="Topic_classification">
+		<div class="T_box">
+			<h1 class="title_h1">Fucking Society!</h1>
+			<p class="title_p">I like study, study make me heppy!</p>
+			<div class="classification">
+				<div class="classification_box">
+					<div class="class_box_image" style="background-image:url(images/indexImg/Go.jpg);"></div>
+					<div class="class_box_content">
+						<p>围棋，是一种策略型两人棋类游戏，中国古时称“弈”，西方名称“Go”。流行于东亚国家（中、日、韩、朝），属琴棋书画四艺之一。围棋起源于中国，传为帝尧所作，春秋战国时期即有记载。隋唐时经朝鲜传入日本，流传到欧美各国。围棋蕴含着中华文化的丰富内涵，它是中国文化与文明的体现。</p>
+					</div>
+					围棋
+				</div>
+				<div class="classification_box">
+					<div class="class_box_image" style="background-image:url(images/indexImg/AlphaGo.jpg);"></div>
+					<div class="class_box_content">
+						<p>阿尔法围棋（AlphaGo）是第一个击败人类职业围棋选手、第一个战胜围棋世界冠军的人工智能机器人，由谷歌（Google）旗下DeepMind公司戴密斯·哈萨比斯领衔的团队开发。其主要工作原理是“深度学习”。</p>
+					</div>
+					AlphaGo
+				</div>
+				<div class="classification_box">
+					<div class="class_box_image" style="background-image:url(images/indexImg/Chess.jpg);"></div>
+					<div class="class_box_content">
+						<p>国际象棋一般被认为源自一种印度的游戏——恰图兰卡，7世纪时流传至波斯成为波斯象棋。穆斯林统治波斯后，它被带到伊斯兰的国家。九世纪传入南欧，10世纪时传到西班牙，11世纪传到英国。15世纪末，现代国际象棋的规则逐渐成形。现代的玩法与19世纪时的大致相同。由于流传已久，因此在各地与各时期产生不少的国际象棋变体规则。</p>
+					</div>
+					国际象棋
+				</div>
+				<div class="classification_box">
+					<div class="class_box_image" style="background-image:url(images/indexImg/DeepBlue.jpg);"></div>
+					<div class="class_box_content">
+						<p>深蓝计划源自许峰雄在美国卡内基·梅隆大学修读博士学位时的研究，第一台电脑名为“晶体测试”，在州象棋比赛中获得了名次，后来该又研制了另一台电脑“沉思”（Deep Thought，该名源自于《银河系漫游指南》中的一台超级电脑），芯片工艺是3微米。</p>
+					</div>
+					Deep Blue
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 主页详细分类内容 -->
+	<div id="main">
+		<div class="main_left">
+			<div class="search_major">
+				<h4>Search</h4>
+				<form action="" method="post">
+					<input type="text">
+					<input type="submit" style="display:none;">
+				</form>
+				<h4>题库</h4>
+				<span><a href="">CET4、CET6</a></span><br>
+				<span><a href="">托福(TOFEL)</a></span><br>
+				<span><a href="">雅思(IELTS)</a></span><br>
+				<span><a href="">考研真题库</a></span><br>
+				<span><a href="">Linux认证</a></span><br>
+				<span><a href="">计算机软件资格考试</a></span><br>
+				<span><a href="">计算机等级考试</a></span><br>
+				<span><a href="">...</a></span><br>
+				<br><br><br>
+				<h4>专业</h4>
+				<span><a href="">网络学院</a></span><br>
+				<span><a href="">经济贸易学院</a></span><br>
+				<span><a href="">财务会计学院</a></span><br>
+				<span><a href="">工商管理学院</a></span><br>
+				<span><a href="">旅游与民航管理学院</a></span><br>
+				<span><a href="">艺术设计学院</a></span><br>
+				<span><a href="">雅和人居工程学院</a></span><br>
+				<span><a href="">中广天择传媒学院</a></span><br>
+				<span><a href="">南海音乐学院</a></span><br>
+				<span><a href="">拳星时代体育学院</a></span><br>
+				<span><a href="">外国语学院</a></span><br>
+				<span><a href="">马克思主义学院</a></span><br>
+			</div>
+		</div>
+		<div class="main_right">
+			<?php require "subpages/main_right.php"; ?>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>forum</title>
+	<link rel="icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/Navigation_bar.css">
+	<link rel="stylesheet" href="css/aside.css">
+	<link rel="stylesheet" href="css/forum.css">
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script/index.js"></script>
+	<script type="text/javascript" src="script/forum.js"></script>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<header th:replace="public/NavigationBar::div"> </header>
+	<div id="main">
+		<div class="main_left">
+			<div class="Write-blog">
+				<div class="Write-blog-img">
+					<img src="images/s3.png">
+					<h3>发表新文章</h3>
+				</div>
+				<form method="post" action="" enctype="multipart/form-data">
+					<input type="text" name="title" title="请填写文章标题……" placeholder="请填写标题..." required><br>
+					<textarea name="content" title="请填写文章内容……" required></textarea><br>
+					<input type="submit" name="Write_blog" value="发表">
+					<input type="reset" name="" value="清空">
+					<a href="javascript:void(0)" class="Write_blog_a">
+						添加图片<input type="file" name="Write_blog_img">
+					</a>
+				</form>
+			</div>
+			
+			<div id="article_list" style="width:100%;"></div>
+			<div class="loading">Loading</div>
+		</div>
+		<div th:replace="public/main_right::div"> </div>
+		<div class="nav">
+			<ul><li class="write_blog">写文章</li>
+				<a href="/writeBlog"><li>Write</li></a>
+				<a href=""><li>b</li></a>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

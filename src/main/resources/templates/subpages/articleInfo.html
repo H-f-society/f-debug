@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Article Info</title>
+	<link rel="icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/Navigation_bar.css">
+	<link rel="stylesheet" href="css/article_info.css">
+	<link rel="stylesheet" href="css/aside.css">
+	<script type="text/javascript" src="jquery/jquery.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery/md5.js"></script>
+	<script type="text/javascript" src="script/index.js"></script>
+	<script type="text/javascript" src="script/forum.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".cbtn").click(function() {
+				$("#comment").toggle("explode");
+			});
+		});
+	</script>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<div id="Navigation_bar">
+		<div class="n_box">
+			<div class="logo"></div><!-- 站点logo -->
+			<div class="n_box_1">
+				<ul><li><a href="/index">首页</a></li>
+					<li><a href="/forum">论坛</a></li>
+					<li><a href="/GameHall">博弈</a></li>
+					<li><a href="/bugList">漏洞</a></li>
+					<li><a href="/download">下载</a></li>
+				</ul>
+			</div>
+			<div class="n_box_2">
+				<form action="" method="post">
+					<input type="text" name="search" title="内容搜索栏……">
+					<input type="submit" name="btn_search" value="GO">
+				</form>
+				<ul class="my_info"><li>
+					<a href="/login" id="ShowUserName">登录</a>
+					<div><ul>
+							<li><a href="/userInfo">个人信息</a></li>
+							<li><a href="/userInfo#tabs-2">发布文章</a></li>
+							<li><a href="/userInfo#tabs-3">历史浏览</a></li>
+							<li><a href="/userInfo#tabs-4">我的关注</a></li>
+							<li><a href="/exit">退出登录</a></li>
+						</ul>
+					</div>
+				</li></ul>
+			</div>
+		</div>
+	</div>
+	<div id="main">
+	
+		<div class="main_left">
+			<!-- <img id="headImg" th:src="@{'images/header/'+${data.header_img}}">
+			<h3 th:text="${data.title}"></h3>
+			<span th:text="${data.time}"></span>
+			<a href=""><span th:text="${data.username}"></span></a>
+			<span>点赞:<span th:text="${data.click_rate}"></span> </span>
+			<span>阅读量:<span th:text="${data.praise}"></span> </span>
+			<hr style="width: 97%;">
+			<p th:utext="${data.content}"></p> -->
+		</div>
+		
+		<div th:replace="public/main_right::div"> </div>
+		<div class="nav">
+			<ul><li class="cbtn">评论</li>
+				<li>点赞</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="comment">
+		
+	</div>
+</body>
+</html>

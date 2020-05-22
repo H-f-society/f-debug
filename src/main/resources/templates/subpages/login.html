@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>f-society</title>
+	<link rel="icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/Navigation_bar.css">
+	<link rel="stylesheet" href="css/login.css">
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.min.js"></script>
+	<script src="jquery/md5.js"></script>
+	<script src="script/index.js"></script>
+	<script src="script/login.js"></script>
+	<style type="text/css" media="screen">
+		#ValidateCode {
+			width: 120px;
+			height: 42px;
+			margin: 0px;
+			margin-bottom: -14px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<header th:replace="public/NavigationBar::div"> </header>
+	<div id="box">
+		<ul>
+			<!-- 登录窗口 -->
+			<li><h2 id="h-login">登录</h2>
+				<div id="login">
+					<!-- 
+						htmlspecialchars($_SERVER["PHP_SELF"]), 获取当前文件路径，并转换为字符
+						可以将地址栏中的恶意代码转换为字符而无法运行，提高安全 
+					-->
+					<form method="post" name="login" class="form1">
+						<input type="text" class="L_username" name="L_username" placeholder="用户名/邮箱" required><br>
+						<input type="password" class="L_password" name="L_password" placeholder="密码" required><br>
+						<input type="text" class="code" name="code1" placeholder="验证码" required>
+						<!-- <input type="button" id="code-num" name="code2"><br> -->
+						<img src="/CreateValidateCode" id="ValidateCode"><br>
+						<input type="submit" id="btn_login" name="btn_login" value="登录">
+					</form>
+				</div>
+			</li>
+			<!-- 注册窗口 -->
+			<li><h2 id="h-register">注册</h2>
+				<div id="register">
+					<form method="post" name="register" class="form2" action="">
+						<input type="text" class="R_username" name="R_username" placeholder="用户名(字母)" required pattern="^[a-zA-Z]*$" value=""><br>
+						<input type="password" class="R_password" name="R_password" placeholder="密码(6-18字母数字)" required pattern=^[a-zA-Z]\w{5,17}$ value=""><br>
+						<input type="password" class="R_againpwd" name="R_againpwd" placeholder="确认密码" required value=""><br>
+						<input type="text" class="R_email" name="R_email" placeholder="邮箱" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" value=""><br>
+						<input type="submit" id="btn_register" name="btn_register" value="注册">
+					</form>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>forum</title>
+	<link rel="icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="jquery/editor.md/css/editormd.min.css">
+	<link rel="stylesheet" href="css/Navigation_bar.css">
+	<link rel="stylesheet" href="css/writeBlog.css">
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery/editor.md/editormd.min.js"></script>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<div id="Navigation_bar">
+		<div class="n_box">
+			<div class="logo"></div><!-- 站点logo -->
+			<div class="n_box_1">
+				<ul><li><a href="/index">首页</a></li>
+					<li><a href="/forum">论坛</a></li>
+					<li><a href="/GameHall">博弈</a></li>
+					<li><a href="/bugList">漏洞</a></li>
+					<li><a href="/download">下载</a></li>
+				</ul>
+			</div>
+			<div class="n_box_2">
+				<form action="" method="post">
+					<input type="text" name="search" title="内容搜索栏……">
+					<input type="submit" name="btn_search" value="GO">
+				</form>
+				<ul class="my_info"><li>
+					<a href="/login" id="ShowUserName">登录</a>
+					<div><ul>
+							<li><a href="/userInfo">个人信息</a></li>
+							<li><a href="/userInfo#tabs-2">发布文章</a></li>
+							<li><a href="/userInfo#tabs-3">历史浏览</a></li>
+							<li><a href="/userInfo#tabs-4">我的关注</a></li>
+							<li><a href="/exit">退出登录</a></li>
+						</ul>
+					</div>
+				</li></ul>
+			</div>
+		</div>
+	</div>
+	<div id="main">
+		<input type="text" class="title" placeholder="请填写标题..." required>
+		<input type="button" id="subBlog" value="发表">
+		<div class="editormd" id="test-editormd">
+			<textarea class="editormd-markdown-textarea" name="test-editormd-markdown-doc"></textarea>
+	        <textarea class="editormd-html-textarea" id="editormd"></textarea>
+	    </div>
+
+	    <script>
+	    	editormd("test-editormd", {
+		        width : 1200,
+		        //height : 575,
+		        height : $(window).height(),
+		        syncScrolling : "single",
+		        //你的lib目录的路径，和你引入js,css路径一样
+		        path : "jquery/editor.md/lib/",
+		        //watch : false, //关闭实时预览
+		        //这个配置在simple.html中并没有，但是为了能够提交表单，使用这个配置可以让构造出来的HTML代码直接在第二个隐藏的textarea域中，方便post提交表单。
+		        saveHTMLToTextarea : true,
+		        imageUpload : true,
+		        emoji: true,
+		        imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+		        imageUploadURL : "/upload/image"
+		    });
+	    	$("#subBlog").click(function() {
+	    		$.ajax({
+		    		url: "/subBlogRequest",
+		    		type: "post",
+		    		contentType: "application/json",
+					data: JSON.stringify({
+						username: localStorage.getItem("username"),
+						title: $(".title").val(),
+						content: $("#editormd").val()
+					}),
+					success: function(data) {
+						if(data == true) alert("发布成功！");
+						else alert("发布失败！");
+					},
+					error: function() {console.log(false);}
+		    	});
+	    	});
+	    </script>
+	</div>
+</body>
+</html>

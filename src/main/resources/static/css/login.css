@@ -1,0 +1,109 @@
+/*
+* @Author: HJJ
+* @Date:   2018-11-24 23:03:45
+* @Last Modified by:   H-f-society
+* @Last Modified time: 2020-04-22 03:17:21
+*/
+body{
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px 0px;
+}
+#box {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	margin: 130px auto;
+	padding: 0px;
+	background-image: url(../images/book.png);
+	background-size: 100% 120%;
+}
+#box h2{ 
+	margin: 0px;
+	moz-user-select: -moz-none; /*一大串不知道哪个，字体不能被鼠标选中*/
+	-moz-user-select: none; 
+	-o-user-select:none; 
+	-khtml-user-select:none; 
+	-webkit-user-select:none; 
+	-ms-user-select:none; 
+	user-select:none; 
+}
+#box ul {
+	position: absolute;
+	margin: 0px;
+	padding: 0px; 
+	top: -55px;
+}
+#box ul li {
+	height: 50px;
+	width: 300px;
+	float: left;
+	text-align: center;
+	font-size: 20px;
+	list-style: none;
+	line-height: 50px;
+	color: #FFFFFF;
+	background-size: 100% 100%;
+}
+#box ul li:nth-child(1){ background-image:url(../images/login.png); }
+#box ul li:nth-child(2){ background-image:url(../images/register.png); }
+#box ul li div{
+	position: absolute;
+	width: 600px;
+	height: 400px;
+	background-image: url(../images/loginbg1.png);
+	background-size: 100% 100%;
+	display: none;
+	left: 0px;
+	top: 50px;
+}
+#box ul li #register{background-image: url(../images/loginbg3.png);}
+/*li:hover div{ display: block; }*/
+/*############################################*/
+/*登录界面样式*/
+#box ul li form{ text-align: left; margin: 50px auto; width: 420px; }
+#box ul li input{
+	width: 400px;
+	height: 40px;
+	margin: 15px;
+	border: 0px;
+	font-size: 20px;
+	outline: none;
+	box-shadow: 2px 2px 2px #696767 inset;
+}
+#box ul li .form2{ margin: 35px auto; }
+#box ul li .code{ width: 250px; }
+#box ul li #login #code-num{
+	position: absolute;
+	top: 194px;
+	left: 370px;
+	width: 120px;
+	height: 42px;
+	float:right;
+	outline: none;
+	font-family: 华文行楷;
+	font-size: 30px;
+	color: #FFFFFF;
+	letter-spacing: 5px;
+	text-align: center;
+	text-shadow:10px 5px 5px #000;/*字体阴影*/
+	box-shadow: 0 0 0 #fff inset;
+	moz-user-select: -moz-none; /*一大串不知道哪个，字体不能被鼠标选中*/
+	-moz-user-select: none; 
+	-o-user-select:none; 
+	-khtml-user-select:none; 
+	-webkit-user-select:none; 
+	-ms-user-select:none; 
+	user-select:none;
+}
+#box ul li input:nth-child(8),input:nth-child(9){ 
+	background-color: #3D3C3C; 
+	box-shadow:0px 0px 0px !important; 
+	color: #FFF;
+}
+#box ul li input:nth-child(8):hover,input:nth-child(9):hover{
+	background-color: #212020;
+	box-shadow: 5px 5px 5px #000000;
+}
+#box ul li #register input{ margin-top: 10px; margin-left: 15px; }

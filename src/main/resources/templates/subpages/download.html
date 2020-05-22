@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>download</title>
+	<link rel="icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/f-society.ico" type="image/x-icon">
+	<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/Navigation_bar.css">
+	<script type="text/javascript" src="jquery/jquery.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery/md5.js"></script>
+	<script type="text/javascript" src="script/index.js"></script>
+	<style type="text/css">
+		body {
+			width: 100%;
+			height: 100%;
+			padding: 0px 0px;
+			margin: 0px 0px;
+			background: #333;
+		}
+		#box{
+			width: 450px;
+			height: 450px;
+			margin: 100px auto;
+			-webkit-transform-style: preserve-3d;
+			/* -webkit-transform: rotateY(-30deg) rotateX(-200deg); */
+			-webkit-animation:box 30s infinite linear;
+			border: 5px solid #FFF;
+		}
+		@-webkit-keyframes box{
+			0%{ transform: rotateX(-30deg) rotateY(-200deg);}
+			100%{ transform: rotateX(360deg) rotateY(0deg); }
+		}
+		#box div{
+			position: relative;
+			width: 125px;
+			height: 125px;
+			margin: 12px;
+			float: left;
+			-webkit-transform-style: preserve-3d;
+		}
+		span{ background-color: yellow; }
+		#box div:nth-child(2) span,
+			 div:nth-child(4) span,
+			 div:nth-child(6) span,
+			 div:nth-child(8) span{  background-color: green; }
+		span{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 120px;
+			height: 120px;
+			outline: 1px solid;
+			display: inline-block;
+		}
+		span:nth-child(1){ -webkit-transform: rotateX(90deg)  translateZ(62.5px); }
+		span:nth-child(2){ -webkit-transform: rotateX(270deg) translateZ(62.5px); }
+		span:nth-child(3){ -webkit-transform: rotateY(270deg) translateZ(62.5px); }
+		span:nth-child(4){ -webkit-transform: rotateY(90deg)  translateZ(62.5px); }
+		span:nth-child(5){ -webkit-transform: rotateY(0deg)   translateZ(62.5px); }
+		span:nth-child(6){ -webkit-transform: rotateY(180deg) translateZ(62.5px); }
+	</style>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<div id="Navigation_bar">
+		<div class="n_box">
+			<div class="logo"></div><!-- 站点logo -->
+			<div class="n_box_1">
+				<ul><li><a href="/index">首页</a></li>
+					<li><a href="/forum">论坛</a></li>
+					<li><a href="/GameHall">博弈</a></li>
+					<li><a href="/bugList">漏洞</a></li>
+					<li><a href="/download">下载</a></li>
+				</ul>
+			</div>
+			<div class="n_box_2">
+				<form action="" method="post">
+					<input type="text" name="search" title="内容搜索栏……">
+					<input type="submit" name="btn_search" value="GO">
+				</form>
+				<ul class="my_info"><li>
+					<a href="/login" id="ShowUserName">登录</a>
+					<div><ul>
+							<li><a href="/userInfo">个人信息</a></li>
+							<li><a href="/userInfo#tabs-2">发布文章</a></li>
+							<li><a href="/userInfo#tabs-3">历史浏览</a></li>
+							<li><a href="/userInfo#tabs-4">我的关注</a></li>
+							<li><a href="/exit">退出登录</a></li>
+						</ul>
+					</div>
+				</li></ul>
+			</div>
+		</div>
+	</div>
+	<div id="box"></div>
+	<script type="text/javascript">
+		//获取box,并往里创建添加9个盒子,每个盒子内又分别创建添加6的span
+		var oBox = document.getElementById("box");
+		var mDiv,
+		    mSpan; 
+		for(var i=0; i<9; i++){
+			mDiv = document.createElement("div");
+			mDiv.id = "d"+i;
+			oBox.appendChild(mDiv);
+			for(var j=0; j<6; j++){
+				mSpan = document.createElement("span");
+				mDiv.appendChild(mSpan);
+			}
+		}
+		setInterval("fun()", 50);	//0毫秒移动一个立方体的位置
+		function fun(){
+			//两遍避免前后移动冲突
+			var i = parseInt(Math.random()*9).toString(10);
+			var j = parseInt(Math.random()*9).toString(10);
+			var k = parseInt(Math.random()*200).toString(10);
+			var d = parseInt(Math.random()*200).toString(10);
+			var x = document.getElementById("d"+i);	//从随机生成的九个数中选取一个
+			var y = document.getElementById("d"+j);
+			x.style.webkitTransform = "translateZ("+k+"px)"; //0-200随机生成一个向前的数、Z轴距离
+			y.style.webkitTransform = "translateZ("+(-d)+"px)";
+		}
+		setInterval("fun1()", 1);	//一毫秒对一个span变换颜色
+		function fun1(){
+			//6*9=54个span随机选取一个
+			var k =	parseInt(Math.random()*54).toString(10);
+			var z =  document.getElementsByTagName("span");
+			z[k].style.backgroundColor = ran();	//调用产生的颜色复制给随机选取的span
+		}
+		//随机生成十六进制颜色值
+		function ran(){
+			var c = "#";
+			for(var i=0; i<6; i++){
+				c += parseInt(Math.random()*16).toString(16);
+			}
+			return c;
+		}
+	</script>
+</body>
+</html>

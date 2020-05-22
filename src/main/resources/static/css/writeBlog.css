@@ -1,0 +1,42 @@
+/*
+* @Author: H-f-society
+* @Date:   2020-03-10 01:25:19
+* @Last Modified by:   H-f-society
+* @Last Modified time: 2020-03-10 01:45:14
+*/
+body{
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 1px 0px;
+}
+#main {
+	width: 1200px;
+	margin: 20px auto;
+}
+.title {
+	width: 645px;
+	height: 25px;
+	border: 1px solid;
+	float: left;
+}
+#subBlog {
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	color: #fff;
+	border: 1px;
+	border-radius: 5px;
+	margin-left: 3px;
+	float: left;
+	outline: none;
+	background-color: #2B3DDC;
+}
+#subBlog:hover{ 
+	background-color: #0822C2; 
+}
+.editormd {
+	border: 1px solid;
+	margin-left: 0px;
+	box-shadow: 2px 5px 5px #434343;
+}

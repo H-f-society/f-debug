@@ -1,8 +1,8 @@
 /*
 * @Author: H-f-society
 * @Date:   2020-05-20 17:07:48
-* @Last Modified by:   root
-* @Last Modified time: 2020-05-22 17:07:53
+* @Last Modified by:   H-f-society
+* @Last Modified time: 2020-05-23 17:13:50
 */
 package com.fdebug.dao;
 
@@ -21,10 +21,18 @@ public interface ArticleDao {
 
 	/**
 	 * 按量获取文章列表
+	 * @param  aListNum	[文章列表编号]
 	 */
-	@Select("SELECT u.username FROM user u RIGHT JOIN article a ON u.Id=a.userId ORDER BY a.Id DESC LIMIT #{num}, 10")
+	@Select(
+		"SELECT "+
+			"u.headImg, "+
+			"a.author, a.Id, a.title, a.content, a.createTime, a.praise, a.clickRate "+
+		"FROM "+
+			"user u RIGHT JOIN article a ON u.username=a.author "+ 
+		"ORDER BY a.Id DESC LIMIT #{aListNum}, 10"
+	)
 	List<Article> getArticleList(
-		@Param("num") Integer num
+		@Param("aListNum") Integer aListNum
 	);
 
 	/**
@@ -32,14 +40,46 @@ public interface ArticleDao {
 	 * @author root 2020-05-22
 	 * @return List<Article>
 	 */
-	@Select("SELECT u.username, u.headImg, a.Id, a.title FROM user u RIGHT JOIN article a ON u.Id=a.userId ORDER BY a.clickRate DESC LIMIT 10")
+	@Select(
+		"SELECT "+
+			"u.headImg, "+
+			"a.author, a.Id, a.title "+
+		"FROM "+
+			"user u RIGHT JOIN article a ON u.username=a.author "+
+		"ORDER BY a.clickRate DESC LIMIT 10")
 	List<Article> getArticleListTop10();
 
 	/**
 	 * 通过ID获取文章详细信息
 	 */
-	@Select("SELECT * FROM user u RIGHT JOIN article a ON u.Id=a.userId WHERE Id=#{articleId}")
+	@Select(
+		"SELECT "+
+			"u.headImg, "+
+			"a.author, a.Id, a.title, a.content, a.createTime, a.praise, a.clickRate "+
+		"FROM "+
+			"user u RIGHT JOIN article a ON u.username=a.author "+
+		"WHERE a.Id=#{articleId}"
+	)
 	Article getArticleInfoById(
 		@Param("articleId") Integer articleId
+	);
+
+	/**
+	 * 对数据表插入文章信息
+	 * @author root 2020-05-23
+	 * @param  author 	[用户名]
+	 * @param  title    [文章标题]
+	 * @param  content  [文章内容]
+	 * @return          [true or false]
+	 */
+	@Insert(
+		"INSERT INTO "+
+			"article (author, title, content)" +
+			"values (#{author}, #{title}, #{content})"
+	)
+	Boolean InsertArticleInfo(
+		@Param("author") String author,
+		@Param("title") String title,
+		@Param("content") String content
 	);
 }

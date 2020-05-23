@@ -2,7 +2,7 @@
 * @Author: H-f-society
 * @Date:   2020-04-24 10:31:06
 * @Last Modified by:   H-f-society
-* @Last Modified time: 2020-05-20 20:47:24
+* @Last Modified time: 2020-05-23 23:39:39
 */
 package com.fdebug.entity;
 
@@ -13,7 +13,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
 
 @TableName("user")
 public class User  {
@@ -62,15 +61,15 @@ public class User  {
 	/**
 	 * 用户创建时间
 	 */
-	private Date createTime;
+	private String createTime;
 	/**
 	 * 用户信息更新时间
 	 */
-	private Date updateTime;
+	private String updateTime;
 	/**
 	 * 用户软删除时间
 	 */
-	private Date deleteTime;
+	private String deleteTime;
 
 	public String getUsername() 	{ return this.username; }
 	public String getPassword() 	{ return this.password; }
@@ -80,9 +79,9 @@ public class User  {
 	public String getIpAddress()	{ return this.ipAddress; }
 	public String getPraiseArtId()  {return this.praiseArtId; }
 	public Integer getType() 		{ return this.type; }
-	public Date getCreateTime() 	{ return this.createTime; }
-	public Date getUpdateTime() 	{ return this.updateTime; }
-	public Date getDeleteTime() 	{ return this.deleteTime; }
+	public String getCreateTime() 	{ return this.createTime; }
+	public String getUpdateTime() 	{ return this.updateTime; }
+	public String getDeleteTime() 	{ return this.deleteTime; }
 
 	/**
 	 * 用户登录所需验证码

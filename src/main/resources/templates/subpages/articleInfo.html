@@ -32,7 +32,7 @@
 					<li><a href="/forum">论坛</a></li>
 					<li><a href="/GameHall">博弈</a></li>
 					<li><a href="/bugList">漏洞</a></li>
-					<li><a href="/download">下载</a></li>
+					<li><a href="/download">下载</a></li>.
 				</ul>
 			</div>
 			<div class="n_box_2">
@@ -57,14 +57,14 @@
 	<div id="main">
 	
 		<div class="main_left">
-			<!-- <img id="headImg" th:src="@{'images/header/'+${data.header_img}}">
-			<h3 th:text="${data.title}"></h3>
-			<span th:text="${data.time}"></span>
-			<a href=""><span th:text="${data.username}"></span></a>
-			<span>点赞:<span th:text="${data.click_rate}"></span> </span>
-			<span>阅读量:<span th:text="${data.praise}"></span> </span>
+			<img id="headImg" th:src="@{'images/header/'+${artInfo.headImg}}">
+			<h3 th:text="${artInfo.title}"></h3>
+			<span th:text="${artInfo.createTime}"></span>
+			<a href=""><span th:text="${artInfo.author}"></span></a>
+			<span>点赞:<span th:text="${artInfo.clickRate}"></span> </span>
+			<span>阅读量:<span th:text="${artInfo.praise}"></span> </span>
 			<hr style="width: 97%;">
-			<p th:utext="${data.content}"></p> -->
+			<p th:utext="${artInfo.content}"></p>
 		</div>
 		
 		<div th:replace="public/main_right::div"> </div>

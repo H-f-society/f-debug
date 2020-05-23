@@ -2,7 +2,7 @@
 * @Author: HJJ
 * @Date:   2018-12-29 02:38:21
 * @Last Modified by:   H-f-society
-* @Last Modified time: 2020-02-24 22:59:50
+* @Last Modified time: 2020-05-23 18:17:17
 */
 $(function() {
 	$( document ).tooltip({
@@ -16,7 +16,7 @@ $(function() {
 		}
 	});
 });
-var AlistNum = 0;
+var aListNum = 0;
 $(document).ready(function() {
 	$(".write_blog").click(function(){
 		$(".Write-blog").toggle("fold", 1000);
@@ -27,49 +27,28 @@ $(document).ready(function() {
 	getArticleList();
 	function getArticleList() {
 		$.ajax({
-			url: "getArticleListRequest",
+			url: "loadArticleListRequest",
 			type: "post",
 			contentType: "application/json",
-			data: { alistNum: AlistNum },
+			data: { aListNum: aListNum },
 			success: function(data) {
 				if(data == null) return;
 				for(var i=0; i<data.length; i++) {
 					$("#article_list").append(
 						'<div class="article_list">'+
 							'<span style="display:none;" class="article_id">'+data[i]["id"]+'</span>'+
-							'<img src="images/header/'+data[i]["header_img"]+'" title="'+data[i]["username"]+'">'+
-							'<a href="/articleInfo?id='+data[i]["id"]+'">'+
-							'<h4 title="'+data[i]["title"]+'--------'+data[i]["time"]+'" class="blog_title">'+data[i]["title"]+'</h4></a>'+
+							'<img src="images/header/'+data[i]["headImg"]+'" title="'+data[i]["author"]+'">'+
+							'<a href="/articleInfo?articleId='+data[i]["id"]+'">'+
+							'<h4 title="'+data[i]["title"]+'--------'+data[i]["createTime"]+'" class="blog_title">'+data[i]["title"]+'</h4></a>'+
 							'<span style="color:#044AFB;" title="阅读量">'+data[i]["praise"]+'</span>'+
-							'<span style="color:red;" title="点赞">❤ '+data[i]["click_rate"]+'</span>'+
+							'<span style="color:red;" title="点赞">❤ '+data[i]["clickRate"]+'</span>'+
 						'</div>'
 					);
 				}
 			},
 			error: function(){console.log(false, ">>>");}
 		});
-		AlistNum += 10;
-	}
-	ArticleTopList();
-	function ArticleTopList() {
-		$.ajax({
-			url: "ArticleTopListRequest",
-			type: "post",
-			contentType: "application/json",
-			success: function(data) {
-				for(let i=0; i<10; i++) {
-					$(".recommend").append(
-							"<div class='recommend_list'>" +
-								"<img src='images/header/"+data[i]["header_img"]+"' title='"+data[i]["username"]+"'>" +
-								"<a href='/articleInfo?id="+data[i]["id"]+"' title='"+data[i]["title"]+"'>" +
-									"<h5>" + data[i]["title"] + "</h5>" +
-								"</a>" +
-							"</div>"
-					);
-				}
-			},
-			error: function(){console.log(false, ">>>");}
-		});
+		aListNum += 10;
 	}
 
 	$(window).scroll(function() {

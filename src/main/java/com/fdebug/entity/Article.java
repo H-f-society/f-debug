@@ -1,12 +1,11 @@
 /*
 * @Author: H-f-society
 * @Date:   2020-05-20 16:27:25
-* @Last Modified by:   root
-* @Last Modified time: 2020-05-21 14:23:12
+* @Last Modified by:   H-f-society
+* @Last Modified time: 2020-05-23 23:39:46
 */
 package com.fdebug.entity;
 
-import java.util.Date;
 
 public class Article {
 	/**
@@ -16,7 +15,7 @@ public class Article {
 	/**
 	 * 关联用户ID
 	 */
-	private Integer userId;
+	private String author;
 	/**
 	 * 文章标题
 	 */
@@ -36,35 +35,30 @@ public class Article {
 	/**
 	 * 创建时间
 	 */
-	private Date createTime;
+	private String createTime;
 	/**
 	 * 更新时间
 	 */
-	private Date updateTime;
+	private String updateTime;
 	/**
 	 * 删除时间
 	 */
-	private Date deleteTime;
+	private String deleteTime;
 
 	public Integer getId() 			{ return this.id; }
-	public Integer getUserId() 		{ return this.userId; }
+	public String getAuthor() 		{ return this.author; }
 	public String getTitle() 		{ return this.title; }
 	public String getContent() 		{ return this.content; }
 	public Integer getPraise() 		{ return this.praise; }
 	public Integer getClickRate()	{ return this.clickRate; }
-	public Date getCreateTime() 	{ return this.createTime; }
-	public Date getUpdateTime() 	{ return this.updateTime; }
-	public Date getDeleteTime() 	{ return this.deleteTime; }
+	public String getCreateTime() 	{ return this.createTime; }
+	public String getUpdateTime() 	{ return this.updateTime; }
+	public String getDeleteTime() 	{ return this.deleteTime; }
 
 
-	/**
-	 * 文章关联用户名
-	 */
-	private String username;
 	/**
 	 * 文章关联用户头像
 	 */
 	private String headImg;
-	public String getUsername() { return this.username; }
 	public String getHeadImg()  { return this.headImg; }
 }

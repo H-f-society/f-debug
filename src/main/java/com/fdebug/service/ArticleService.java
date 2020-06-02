@@ -1,8 +1,8 @@
 /*
 * @Author: H-f-society
 * @Date:   2020-05-21 14:33:14
-* @Last Modified by:   H-f-society
-* @Last Modified time: 2020-05-23 17:16:53
+* @Last Modified by:   root
+* @Last Modified time: 2020-05-24 23:05:25
 */
 package com.fdebug.service;
 
@@ -58,5 +58,13 @@ public class ArticleService {
 	 */
 	public Boolean InsertArticleInfo(String author, String title, String content) {
 		return this.articleDao.InsertArticleInfo(author, title, content);
+	}
+
+	/**
+	 * 根据Id更新文章点击率
+	 * @param  articleId  [文章Id]
+	 */
+	public void updateClickRateById(Integer articleId) {
+		this.articleDao.updateClickRateById(articleId);
 	}
 }

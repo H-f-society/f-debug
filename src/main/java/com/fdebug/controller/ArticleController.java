@@ -2,7 +2,7 @@
 * @Author: H-f-society
 * @Date:   2020-05-20 16:25:04
 * @Last Modified by:   H-f-society
-* @Last Modified time: 2020-05-23 18:14:39
+* @Last Modified time: 2020-05-26 04:14:21
 */
 package com.fdebug.controller;
 
@@ -45,7 +45,7 @@ public class ArticleController {
 	 * 文章详细信息
 	 * @author root 2020-05-22
 	 * @param  model     [description]
-	 * @param  articleId [description]
+	 * @param  articleId [文章Id]
 	 * @return           [subpages/articleInfo]
 	 */
 	@RequestMapping("/articleInfo")
@@ -55,6 +55,8 @@ public class ArticleController {
 
 		Article artInfo = this.articleService.getArticleInfoById(Integer.valueOf(articleId));
 		model.addAttribute("artInfo", artInfo);
+
+		this.articleService.updateClickRateById(Integer.valueOf(articleId));
 		return "subpages/articleInfo";
 	}
 

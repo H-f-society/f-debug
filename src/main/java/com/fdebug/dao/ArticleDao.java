@@ -2,7 +2,7 @@
 * @Author: H-f-society
 * @Date:   2020-05-20 17:07:48
 * @Last Modified by:   H-f-society
-* @Last Modified time: 2020-05-23 17:13:50
+* @Last Modified time: 2020-05-24 23:12:53
 */
 package com.fdebug.dao;
 
@@ -51,6 +51,7 @@ public interface ArticleDao {
 
 	/**
 	 * 通过ID获取文章详细信息
+	 * @param  articleId  [文章Id]
 	 */
 	@Select(
 		"SELECT "+
@@ -74,12 +75,25 @@ public interface ArticleDao {
 	 */
 	@Insert(
 		"INSERT INTO "+
-			"article (author, title, content)" +
+			"article (author, title, content) " +
 			"values (#{author}, #{title}, #{content})"
 	)
 	Boolean InsertArticleInfo(
 		@Param("author") String author,
 		@Param("title") String title,
 		@Param("content") String content
+	);
+
+	/**
+	 * 根据Id更新文章点击率
+	 * @param  articleId  [文章Id]
+	 */
+	@Update(
+		"UPDATE article SET " +
+			"clickRate=clickRate+1 " +
+		"WHERE Id=#{articleId}"
+	)
+	void updateClickRateById(
+		@Param("articleId") Integer articleId
 	);
 }

@@ -2,7 +2,7 @@
 * @Author: HJJ
 * @Date:   2018-12-29 02:38:21
 * @Last Modified by:   H-f-society
-* @Last Modified time: 2020-05-23 18:17:17
+* @Last Modified time: 2020-05-26 04:14:25
 */
 $(function() {
 	$( document ).tooltip({
@@ -40,8 +40,8 @@ $(document).ready(function() {
 							'<img src="images/header/'+data[i]["headImg"]+'" title="'+data[i]["author"]+'">'+
 							'<a href="/articleInfo?articleId='+data[i]["id"]+'">'+
 							'<h4 title="'+data[i]["title"]+'--------'+data[i]["createTime"]+'" class="blog_title">'+data[i]["title"]+'</h4></a>'+
-							'<span style="color:#044AFB;" title="阅读量">'+data[i]["praise"]+'</span>'+
-							'<span style="color:red;" title="点赞">❤ '+data[i]["clickRate"]+'</span>'+
+							'<span style="color:#044AFB;" title="阅读量">'+data[i]["clickRate"]+'</span>'+
+							'<span style="color:red;" title="点赞">❤ '+data[i]["praise"]+'</span>'+
 						'</div>'
 					);
 				}

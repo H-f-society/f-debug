@@ -24,36 +24,7 @@
 </head>
 <body>
 	<!-- 导航栏 -->
-	<div id="Navigation_bar">
-		<div class="n_box">
-			<div class="logo"></div><!-- 站点logo -->
-			<div class="n_box_1">
-				<ul><li><a href="/index">首页</a></li>
-					<li><a href="/forum">论坛</a></li>
-					<li><a href="/GameHall">博弈</a></li>
-					<li><a href="/bugList">漏洞</a></li>
-					<li><a href="/download">下载</a></li>.
-				</ul>
-			</div>
-			<div class="n_box_2">
-				<form action="" method="post">
-					<input type="text" name="search" title="内容搜索栏……">
-					<input type="submit" name="btn_search" value="GO">
-				</form>
-				<ul class="my_info"><li>
-					<a href="/login" id="ShowUserName">登录</a>
-					<div><ul>
-							<li><a href="/userInfo">个人信息</a></li>
-							<li><a href="/userInfo#tabs-2">发布文章</a></li>
-							<li><a href="/userInfo#tabs-3">历史浏览</a></li>
-							<li><a href="/userInfo#tabs-4">我的关注</a></li>
-							<li><a href="/exit">退出登录</a></li>
-						</ul>
-					</div>
-				</li></ul>
-			</div>
-		</div>
-	</div>
+	<header th:replace="public/NavigationBar::div"> </header>
 	<div id="main">
 	
 		<div class="main_left">
@@ -61,8 +32,8 @@
 			<h3 th:text="${artInfo.title}"></h3>
 			<span th:text="${artInfo.createTime}"></span>
 			<a href=""><span th:text="${artInfo.author}"></span></a>
-			<span>点赞:<span th:text="${artInfo.clickRate}"></span> </span>
-			<span>阅读量:<span th:text="${artInfo.praise}"></span> </span>
+			<span>点赞:<span th:text="${artInfo.praise}"></span> </span>
+			<span>阅读量:<span th:text="${artInfo.clickRate}"></span> </span>
 			<hr style="width: 97%;">
 			<p th:utext="${artInfo.content}"></p>
 		</div>
